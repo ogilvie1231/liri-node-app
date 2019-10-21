@@ -28,6 +28,10 @@ function concertSearch(artistName) {
     var bandSearch = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp"
     axios.get(bandSearch)
         .then(function(response) {
+            // log the name of the venue
+            // log venue location
+            // log the date of the show
+            // use moment to format the date in MM/DD/YYYY
             console.log(response.data);
         })
         .catch(function(error) {
@@ -42,6 +46,11 @@ function spotifySearch(songName) {
         }
 
         console.log(data.tracks.items[0]);
+        // log the artist
+        // log the song name
+        // log a preview link
+        // log the album
+        // create a default if no song is returned
     });
 };
 
@@ -50,6 +59,14 @@ function movieSearch(movieName) {
     axios.get(movieURL)
         .then(function(response) {
             console.log(response.data)
+                // log movie title
+                // log year released 
+                // log the imdb ratings
+                // log the rotten tomato ratings
+                // log the country where the movie was made 
+                // log the movie language
+                // log the plot
+                // log the actors
         }).catch(function(error) {
             console.log(error)
         });
