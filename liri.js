@@ -81,3 +81,8 @@ function doWhatItSays() {
         spotifySearch(data.split(',')[1])
     });
 };
+// *BONUS*
+// us fs append to put the returned information into a file titled log.txt
+// log the command as well
+
+// *readme* create a visually stunning readme with gifs that show all functionallity
