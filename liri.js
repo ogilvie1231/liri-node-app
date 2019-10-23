@@ -12,28 +12,25 @@ console.log('topic: ', topic);
 
 function takeInput(command) {
     if (command === 'concert-this') {
-        // concertSearch(topic);
-        // if (topic === '') {
-        //     concertSearch('queen')
-        // } else {
+        if (topic === '') {
+            concertSearch('Bridge City Sinners')
+        }
         concertSearch(topic);
-        // }
     } else if (command === 'spotify-this-song') {
         if (topic === '') {
-            spotifySearch('the sign by ace of base')
+            spotifySearch('the sign, ace of base')
         } else {
             spotifySearch(topic);
         }
     } else if (command === 'movie-this') {
         if (topic === '') {
             movieSearch('Mr.Nobody')
-            console.log('if you have not watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>')
+            console.log('if you have not watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/> \nIt is on Netflix!')
         } else
             movieSearch(topic);
     } else {
         doWhatItSays();
     }
-
 };
 
 takeInput(input);
@@ -41,19 +38,23 @@ takeInput(input);
 function concertSearch(artistName) {
     var bandSearch = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp"
     axios.get(bandSearch)
-        .then(function(data) {
-            console.log(data)
-                // // log the name of the venue
-                // console.log('Venue: ', response.data[0].venue.name)
-                //     // log venue location
-                // console.log('Location: ', response.data[0].venue.city + ', ' + response.data[0].venue.region)
-                //     // log the date of the show
-                // console.log('Date: ', moment(response.data[0].datetime).format('MM/DD/YYYY'));
+        .then(function(response) {
+            resp = response.data
+            for (var i = 0; i < resp.length; i++) {
+                console.log('Venue: ', resp[i].venue.name)
+                    // log venue location
+                console.log('Location: ', resp[i].venue.city + ', ' + resp[i].venue.region)
+                    // log the date of the show
+                console.log('Date: ', moment(resp[i].datetime).format('MM/DD/YYYY'));
+            }
+
+
         })
         .catch(function(error) {
             console.log(error);
         });
-};
+}
+
 
 function spotifySearch(songName) {
     spotify.search({ type: 'track', query: songName }, function(err, data) {
@@ -108,10 +109,5 @@ function doWhatItSays() {
         }
         console.log(data)
         spotifySearch(data.split(',')[1])
-    });
-};
-// *BONUS*
-// us fs append to put the returned information into a file titled log.txt
-// log the command as well
-
-// *readme* create a visually stunning readme with gifs that show all functionallity
+    })
+}
