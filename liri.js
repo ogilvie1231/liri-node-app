@@ -12,11 +12,12 @@ console.log('topic: ', topic);
 
 function takeInput(command) {
     if (command === 'concert-this') {
-        if (topic === '') {
-            concertSearch('amigo the devil')
-        } else {
-            concertSearch(topic);
-        }
+        // concertSearch(topic);
+        // if (topic === '') {
+        //     concertSearch('queen')
+        // } else {
+        concertSearch(topic);
+        // }
     } else if (command === 'spotify-this-song') {
         if (topic === '') {
             spotifySearch('the sign by ace of base')
@@ -36,6 +37,23 @@ function takeInput(command) {
 };
 
 takeInput(input);
+
+function concertSearch(artistName) {
+    var bandSearch = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp"
+    axios.get(bandSearch)
+        .then(function(data) {
+            console.log(data)
+                // // log the name of the venue
+                // console.log('Venue: ', response.data[0].venue.name)
+                //     // log venue location
+                // console.log('Location: ', response.data[0].venue.city + ', ' + response.data[0].venue.region)
+                //     // log the date of the show
+                // console.log('Date: ', moment(response.data[0].datetime).format('MM/DD/YYYY'));
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};
 
 function spotifySearch(songName) {
     spotify.search({ type: 'track', query: songName }, function(err, data) {
@@ -62,9 +80,6 @@ function movieSearch(movieName) {
     var movieURL = "https://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy"
     axios.get(movieURL)
         .then(function(response) {
-            // if (movieName = "") {
-            //     movieName = 'Mr. Nobody'
-            // }
             // log movie title
             console.log('Movie title: ', response.data.Title)
                 // log year released 
