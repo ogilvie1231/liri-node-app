@@ -32,7 +32,7 @@ function concertSearch(artistName) {
             // log venue location
             // log the date of the show
             // use moment to format the date in MM/DD/YYYY
-            console.log(response.data);
+            console.log(response);
         })
         .catch(function(error) {
             console.log(error);
