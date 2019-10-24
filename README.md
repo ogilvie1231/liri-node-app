@@ -12,12 +12,19 @@ Step 4 – Press enter and let the magic happen
 Technology Used:
 
 •JavaScript
+<br/>
 •Dotenv
+<br/>
 •Spotify API
+<br/>
 •Bands in Town API
+<br/>
 •OMDB API
+<br/>
 •Axios
+<br/>
 •Moment
+<br/>
 
 'do-what-it-says' input
 ![do what it says](images/do-what-it-says.gif) <br />
