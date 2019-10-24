@@ -26,18 +26,18 @@ Technology Used:
 •Moment
 <br/>
 
-'do-what-it-says' input
+<strong>'do-what-it-says' input</strong>
 <br/>
-![do what it says](images/do-what-it-says.gif)
+<strong>![do what it says](images/do-what-it-says.gif)</strong>
 <br />
-'concert-this' input
+<strong>'concert-this' input
 <br/>
-![concert this](images/concert-this.gif)
+<strong>![concert this](images/concert-this.gif)</strong>
 <br/>
-'movie-this' input
+<strong>'movie-this' input
 <br/>
-![movie this](images/movie-this.gif)
+<strong>![movie this](images/movie-this.gif)</strong>
 <br/>
-'spotify-this-song' input
+<strong>'spotify-this-song' input
 <br/>
-![spotify this song](images/spotify-this.gif)
+<strong>![spotify this song](images/spotify-this.gif)</strong>
