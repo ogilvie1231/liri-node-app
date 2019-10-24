@@ -20,7 +20,7 @@ Technology Used:
 •Moment
 
 'do-what-it-says' input
-![do what it says](images/do-what-it-says.gif) \n
+![do what it says](images/do-what-it-says.gif) <br />
 'concert-this' input
 ![concert this](images/concert-this.gif)
 'movie-this' input
