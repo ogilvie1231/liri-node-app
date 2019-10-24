@@ -27,10 +27,17 @@ Technology Used:
 <br/>
 
 'do-what-it-says' input
-![do what it says](images/do-what-it-says.gif) <br />
+<br/>
+![do what it says](images/do-what-it-says.gif)
+<br />
 'concert-this' input
+<br/>
 ![concert this](images/concert-this.gif)
+<br/>
 'movie-this' input
+<br/>
 ![movie this](images/movie-this.gif)
+<br/>
 'spotify-this-song' input
+<br/>
 ![spotify this song](images/spotify-this.gif)
