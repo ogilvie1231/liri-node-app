@@ -13,7 +13,7 @@ console.log('topic: ', topic);
 function takeInput(command) {
     if (command === 'concert-this') {
         if (topic === '') {
-            concertSearch('Bridge City Sinners')
+            concertSearch('Amigo The Devil')
         }
         concertSearch(topic);
     } else if (command === 'spotify-this-song') {
@@ -39,19 +39,24 @@ function concertSearch(artistName) {
     var bandSearch = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp"
     axios.get(bandSearch)
         .then(function(response) {
+            // console.log(response.data)
             resp = response.data
-            for (var i = 0; i < resp.length; i++) {
-                console.log('Venue: ', resp[i].venue.name)
-                    // log venue location
-                console.log('Location: ', resp[i].venue.city + ', ' + resp[i].venue.region)
-                    // log the date of the show
-                console.log('Date: ', moment(resp[i].datetime).format('MM/DD/YYYY'));
+            if (resp.length === 0) {
+                console.log('There is no information at this time')
+            } else {
+                // console.log(resp)
+                for (var i = 0; i < resp.length; i++) {
+                    console.log(resp[i].lineup)
+                    console.log('Venue: ', resp[i].venue.name)
+                        // log venue location
+                    console.log('Location: ', resp[i].venue.city + ', ' + resp[i].venue.region)
+                        // log the date of the show
+                    console.log('Date: ', moment(resp[i].datetime).format('MM/DD/YYYY'));
+                }
             }
-
-
         })
         .catch(function(error) {
-            console.log(error);
+            console.log('No events found artist');
         });
 }
 
